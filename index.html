@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Pin-Han Chen</title>
+
+<!-- Headings + body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Baskerville (web fallback) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+html { scroll-behavior: smooth; }
+
+:root{
+  --bg: #f7f5f2;
+  --ink: #2b2b2b;
+  --brand: #4a2a16;
+  --paper: #ffffff;
+
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-baskerville: "Baskerville", "Libre Baskerville", Georgia, "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+/* Anchor offset */
+#home, #selected-publications, #selected-projects, #selected-photos, #contact {
+  scroll-margin-top: 84px;
+}
+
+/* ===== NAVIGATION ===== */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--brand);
+  color: #f4efe9;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.topnav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand a {
+  color: #f4efe9;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.navToggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: #f4efe9;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.navlinks {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.navlinks a {
+  color: #f4efe9;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.navlinks a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Dropdown */
+.dropdown { position: relative; }
+
+.dropdownMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  display: none;
+}
+
+.dropdownMenu a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #2b2b2b;
+}
+
+.dropdownMenu a:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.dropdown.open .dropdownMenu { display: block; }
+
+/* ===== HERO: background only on TOP HALF ===== */
+.hero{
+  position: relative;
+  padding: 88px 24px 0;
+  overflow: visible;
+  background: transparent;
+}
+
+/* ONLY top area has the hero image */
+.hero::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height: 200px;                 /* adjust if you want higher/lower cutoff */
+  background-image:
+    radial-gradient(1200px 500px at 75% 40%, rgba(0,0,0,0.05), rgba(0,0,0,0.35)),
+    url("hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* Portrait: remove white frame */
+.portraitCard{
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Photo without white frame, still has subtle shadow */
+.hero img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+}
+
+/* Hero text on background => white */
+.hero h1 {
+  font-family: var(--font-baskerville);
+  font-size: 40px;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.hero h2 {
+  font-family: var(--font-baskerville);
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  color: #ffffff;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.28);
+}
+
+
+/* ===== White intro block (no background influence) ===== */
+.heroIntro{
+  background: #ffffff;
+  padding: 0px 0 70px;
+  margin-top: -250px;  
+}
+
+.heroIntro-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 56px;
+}
+
+.heroIntro .introText{
+  font-family: var(--font-baskerville);
+  font-size: 18px;
+  line-height: 1.9;
+  color: #2b2b2b;
+  max-width: 680px;
+  margin: 0 0 14px;
+}
+
+.btnHero {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid var(--brand);
+  color: var(--brand);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  background: transparent;
+}
+
+.btnHero:hover{
+  background: rgba(74,42,22,0.06);
+}
+
+/* ===== Section titles (display font) ===== */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+/* ===== Selected Sections: View all (ONLY what you requested) ===== */
+.sectionHead{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.sectionHead .section-title{
+  margin-bottom: 22px; /* keep your original spacing */
+}
+
+.viewAllBtn{
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--brand);
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.viewAllBtn:hover{
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Selected Publications list */
+.pubList{
+  margin: 0;
+  padding-left: 22px;
+}
+
+.pubList li{
+  margin-bottom: 14px;
+}
+
+/* ===== Projects ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 24px;
+}
+
+.card-link { text-decoration: none; color: inherit; }
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.15s;
+}
+
+.card-link:hover .card {
+  transform: translateY(-3px);
+}
+
+/* ===== Selected Photos ===== */
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 16px;
+}
+
+.photoGrid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== Contact ===== */
+.contact {
+  background: var(--brand);
+  color: #f4efe9;
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.contact h3 {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(244,239,233,0.6);
+  padding: 10px 2px;
+  color: white;
+}
+
+.btn {
+  width: 100%;
+  border: 1px solid rgba(244,239,233,0.8);
+  background: transparent;
+  color: white;
+  padding: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+  .hero-inner,
+  .contact-inner,
+  .heroIntro-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero::before{
+    height: 300px;
+    background-image:
+      radial-gradient(1200px 500px at 60% 20%, rgba(0,0,0,0.10), rgba(0,0,0,0.45)),
+      url("hero-bg.jpg");
+  }
+
+  .photoGrid { grid-template-columns: repeat(2,1fr); }
+
+  .navToggle { display: block; }
+
+  .navlinks {
+    position: absolute;
+    left: 0; right: 0;
+    top: 64px;
+    background: var(--brand);
+    flex-direction: column;
+    padding: 16px 24px;
+    display: none;
+  }
+
+  .topnav.open .navlinks { display: flex; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><a href="#home">Dr. Pin-Han Chen</a></div>
+    <button class="navToggle">☰</button>
+    <nav class="navlinks">
+      <a href="#home">Home</a>
+      <!-- Keep the nav item "About" but point to about.html since we removed About section on homepage -->
+      <a href="about.html">About</a>
+      <a href="#selected-projects">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="#selected-photos">Activities</a>
+      <a href="honors.html">Honors</a>
+      <a href="#contact">Contact</a>
+
+      <span class="dropdown">
+        <a href="#">More ▾</a>
+        <ul class="dropdownMenu">
+          <li><a href="links.html">Links</a></li>
+        </ul>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="portraitCard">
+      <img src="個人照.jpg" alt="Dr. Pin-Han Chen">
+    </div>
+
+    <div>
+      <h1>Dr. Pin-Han Chen</h1>
+      <h2>Assistant Professor, Providence University</h2>
+    </div>
+  </div>
+</section>
+
+<!-- White intro block: no background behind text, font = Baskerville -->
+<section class="heroIntro">
+  <div class="heroIntro-inner">
+    <div></div>
+    <div>
+      <p class="introText">
+        Dr. Pin Han Chen is a researcher based in Taiwan working at the intersection of circular economy, environmental systems, and process-oriented approaches to resource recovery. Her work focuses on waste valorization, integrating conventional metallurgical methods with emerging tools such as AI-assisted decision systems, low-carbon process optimization, microbial metallurgy, and data-driven environmental assessment.
+      </p>
+
+      <p class="introText">
+        Her research addresses practical waste challenges from a systems perspective and explores alternative pathways when existing technologies are difficult to scale. She also works on carbon reduction strategies, with particular attention to low-carbon process design for agricultural and industrial systems. Her broader goal is to connect circular economy thinking with carbon management and to contribute research that supports real change and wider adoption of sustainable practices in industry.
+      </p>
+
+      <p class="introText">
+        <strong>ZH</strong><br>
+        陳品涵博士之研究聚焦於循環經濟、智慧回收系統與碳管理技術之整合與應用。
+      </p>
+
+      <a class="btnHero" href="about.html">About Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: Selected Publications (placed above Selected Projects) -->
+<section class="container" id="selected-publications">
+  <div class="sectionHead">
+    <h2 class="section-title">Selected Publications</h2>
+    <a class="viewAllBtn" href="publications.html">View all</a>
+  </div>
+
+  <ol class="pubList">
+    <li>Kuo, C. Y., Chen, T. Y., &amp; Chen, P. H. (2026). Development and Field Application of an Integrated Three-Phase Greenhouse Gas Monitoring System in Smart Shrimp Aquaculture with Biofloc-Based Carbon Mitigation. Aquacultural Engineering, 102699.</li>
+    <li>Tseng, H. K., Su, J. A., Chen, I. M., Chen, Y. Z., Wu, J. Y., Chen, P. H., &amp; Liu, F. W. (2026). Closed-loop recycling and recovery of vanadium cathodes from waste aqueous zinc-ion batteries. Chemical Engineering Journal, 172590.</li>
+    <li>Wu, J. Y. Chen, P. H. &amp; Liu, F.-W. (2025). Development of a Circular Economy Framework for Coffee Ground Recycling from Pyrolysis-Based Activated Carbon to Service Platform Integration, Sensors and Materials.</li>
+    <li>Wu, J. Y. &amp; Chen, P. H. (2025). Novel Approach to Mixed Waste Label Recycling by Automation Density Sorting, Sensors and Materials</li>
+    <li>Chen, P. H., &amp; Wu, J. Y. (2025). Circular Economy Approach for Utilizing Organic Waste in Cat Litter and Compost to Support Plant Growth. Waste, 3(1), 8.</li>
+  </ol>
+</section>
+
+<section class="container" id="selected-projects">
+  <div class="sectionHead">
+    <h2 class="section-title">Selected Projects</h2>
+    <a class="viewAllBtn" href="projects.html">View all</a>
+  </div>
+
+  <div class="cards">
+    <a class="card-link" href="projects.html">
+      <div class="card">
+        <h4>Circular Materials Development</h4>
+        <p>循環材料開發與資源再生</p>
+      </div>
+    </a>
+    <a class="card-link" href="projects.html">
+      <div class="card">
+        <h4>AI-Driven Recycling Systems</h4>
+        <p>AI智慧回收系統</p>
+      </div>
+    </a>
+    <a class="card-link" href="projects.html">
+      <div class="card">
+        <h4>Carbon Monitoring Technologies</h4>
+        <p>碳監測與MRV技術</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="container" id="selected-photos">
+  <div class="sectionHead">
+    <h2 class="section-title">Selected Photos</h2>
+    <a class="viewAllBtn" href="activities.html">View all</a>
+  </div>
+
+  <div class="photoGrid">
+    <img src="assets/activities/photo01.jpg" alt="">
+    <img src="assets/activities/photo02.jpg" alt="">
+    <img src="assets/activities/photo03.jpg" alt="">
+    <img src="assets/activities/photo04.jpg" alt="">
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-inner">
+    <div>
+      <h3>Contact<br>Information</h3>
+      <p>
+        Sustainable Environment and Smart Technology,<br>
+        Providence University.<br><br>
+        <a href="mailto:hannah530@pu.edu.tw" style="color:#f4efe9;">hannah530@pu.edu.tw</a>
+      </p>
+    </div>
+    <div>
+      <form action="https://formspree.io/f/xpqjegyr" method="POST">
+        <div class="field">
+          <input name="first_name" placeholder="First name *" required>
+        </div>
+        <div class="field">
+          <input name="last_name" placeholder="Last name *" required>
+        </div>
+        <div class="field">
+          <input name="email" type="email" placeholder="Email *" required>
+        </div>
+        <div class="field">
+          <textarea name="message" rows="5" placeholder="Message"></textarea>
+        </div>
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+const topnav = document.querySelector('.topnav');
+const toggle = document.querySelector('.navToggle');
+if (toggle){
+  toggle.addEventListener('click',()=>{
+    topnav.classList.toggle('open');
+  });
+}
+const dropdown = document.querySelector('.dropdown');
+if (dropdown){
+  dropdown.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  document.addEventListener('click',()=>{
+    dropdown.classList.remove('open');
+  });
+}
+</script>
+
+</body>
+</html>

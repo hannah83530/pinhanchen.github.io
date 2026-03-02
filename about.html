@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About · Dr. Pin-Han Chen</title>
+<style>
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:"Helvetica Neue",Arial,sans-serif;color:#2b2b2b;background:#f7f5f2;line-height:1.6;}
+.container{max-width:1100px;margin:0 auto;padding:80px 24px;}
+/* topnav (same as index) */
+.topnav{position:sticky;top:0;z-index:999;background:#4a2a16;color:#f4efe9;height:64px;display:flex;align-items:center;}
+.topnav-inner{max-width:1100px;margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;}
+.brand a{color:#f4efe9;text-decoration:none;font-size:18px;letter-spacing:.2px;opacity:.95;font-weight:650;}
+.navToggle{display:none;background:transparent;border:0;color:#f4efe9;font-size:22px;cursor:pointer;}
+.navlinks{display:flex;gap:22px;font-size:14px;align-items:center;}
+.navlinks a{color:#f4efe9;text-decoration:none;opacity:.9;}
+.navlinks a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;}
+.dropdown{position:relative;}
+.dropbtn{display:inline-flex;align-items:center;gap:6px;}
+.dropdownMenu{position:absolute;right:0;top:calc(100% + 10px);min-width:180px;background:#fff;border-radius:12px;padding:8px;list-style:none;margin:0;box-shadow:0 12px 28px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.06);display:none;}
+.dropdownMenu a{display:block;padding:10px;border-radius:10px;color:#2b2b2b;text-decoration:none;font-size:14px;}
+.dropdownMenu a:hover{background:rgba(0,0,0,.06);}
+.dropdown.open .dropdownMenu{display:block;}
+@media (max-width:900px){
+  .navToggle{display:inline-block;}
+  .navlinks{position:absolute;left:0;right:0;top:64px;background:#4a2a16;padding:14px 24px 18px;display:none;flex-direction:column;align-items:flex-start;gap:12px;}
+  .topnav.open .navlinks{display:flex;}
+  .dropdownMenu{position:static;background:transparent;border:0;box-shadow:none;padding:0;display:none;}
+  .dropdown.open .dropdownMenu{display:block;}
+  .dropdownMenu a{color:#f4efe9;padding:8px 0;}
+  .dropdownMenu a:hover{background:transparent;text-decoration:underline;}
+}
+/* page */
+h1{font-size:46px;font-weight:300;margin:0 0 14px;}
+.section{margin-top:28px;}
+.grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;}
+.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 10px 25px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.06);}
+.card h2{margin:0 0 10px;font-size:18px;font-weight:650;}
+.small{font-size:14px;opacity:.85;}
+ul{margin:10px 0 0;padding-left:18px;}
+a{color:#4a2a16;}
+@media (max-width:900px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><a href="index.html#home">Dr. Pin-Han Chen</a></div>
+    <button class="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#selected-projects">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="index.html#selected-photos">Activities</a>
+      <a href="honors.html">Honors</a>
+      <a href="index.html#contact">Contact</a>
+      <span class="dropdown">
+        <a class="dropbtn" href="#" aria-haspopup="true" aria-expanded="false">More ▾</a>
+        <ul class="dropdownMenu" role="menu">
+          <li><a role="menuitem" href="links.html">Links</a></li>
+        </ul>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>About</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>About</h2>
+      <p class="small">
+        Pin Han Chen is a researcher based in Taiwan working at the intersection of circular economy,
+        environmental systems, and process-oriented approaches to resource recovery. Her work focuses on waste
+        valorization, integrating conventional metallurgical methods with emerging tools such as AI-assisted
+        decision systems, low-carbon process optimization, microbial metallurgy, and data-driven environmental
+        assessment.
+      </p>
+      <p class="small">
+        Her research addresses practical waste challenges from a systems perspective and explores alternative
+        pathways when existing technologies are difficult to scale. She also works on carbon reduction strategies,
+        with particular attention to low-carbon process design for agricultural and industrial systems. Her broader
+        goal is to connect circular economy thinking with carbon management and to contribute research that supports
+        real change and wider adoption of sustainable practices in industry.
+      </p>
+    </div>
+
+    <aside class="card">
+      <h2>Contact</h2>
+      <div class="small">
+        Email: <a href="mailto:hannah530@pu.edu.tw">hannah530@pu.edu.tw</a><br/>
+        Email (alt): <a href="mailto:hannah83530@gmail.com">hannah83530@gmail.com</a><br/>
+        ORCID: <a href="https://orcid.org/0009-0004-1507-6822" target="_blank" rel="noopener">0009-0004-1507-6822</a><br/>
+        ResearchGate: <a href="https://www.researchgate.net/profile/Pin-Han-Chen-2" target="_blank" rel="noopener">Profile</a><br/>
+        SciProfiles: <span>2590677</span>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section">
+    <div class="card">
+      <h2>Education</h2>
+      <ul>
+        <li>PhD, Resource Engineering, National Cheng Kung University</li>
+        <li>MSc, Environmental Systems Engineering, University College London</li>
+        <li>BSc, Environmental Engineering, National Cheng Kung University</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h2>Positions</h2>
+      <ul>
+        <li>Assistant Professor, Bachelor Program in Sustainable Environment and Smart Technology, Providence University</li>
+        <li>Adjunct Instructor, Department of Refrigeration, Air Conditioning and Energy Engineering, National Chin-Yi University of Technology</li>
+        <li>Project Researcher, Department of Biotechnology and Industry Science, National Cheng Kung University</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<script>
+  const topnav = document.querySelector('.topnav');
+  const toggle = document.querySelector('.navToggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const isOpen = topnav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+  const dropdown = document.querySelector('.dropdown');
+  const dropbtn = document.querySelector('.dropbtn');
+  if (dropdown && dropbtn) {
+    dropbtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = dropdown.classList.toggle('open');
+      dropbtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+        dropbtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  document.querySelectorAll('.navlinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      topnav.classList.remove('open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>

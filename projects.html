@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects | Dr. Pin-Han Chen</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  font-family:"Helvetica Neue", Arial, sans-serif;
+  color:#2b2b2b;
+  background:#f7f5f2;
+  line-height:1.6;
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:72px 24px;
+}
+
+/* ===== Top Nav (UPDATED to match new homepage nav) ===== */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #4a2a16;
+  color: #f4efe9;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.topnav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand a{
+  color:#f4efe9;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+
+/* Mobile toggle (same behavior as homepage) */
+.navToggle{
+  display:none;
+  background:transparent;
+  border:0;
+  color:#f4efe9;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.navlinks{
+  display:flex;
+  gap:22px;
+  font-size:14px;
+  align-items:center;
+}
+
+.navlinks a{
+  color:#f4efe9;
+  text-decoration:none;
+  opacity:.9;
+}
+
+.navlinks a:hover{
+  opacity:1;
+  text-decoration:underline;
+  text-underline-offset:6px;
+}
+
+/* Dropdown */
+.dropdown{ position:relative; }
+
+.dropdownMenu{
+  position:absolute;
+  right:0;
+  top:calc(100% + 10px);
+  background:#ffffff;
+  border-radius:12px;
+  padding:8px;
+  list-style:none;
+  margin:0;
+  box-shadow:0 12px 28px rgba(0,0,0,0.18);
+  display:none;
+}
+
+.dropdownMenu a{
+  display:block;
+  padding:8px 12px;
+  border-radius:8px;
+  color:#2b2b2b;
+  opacity:1;
+  text-decoration:none;
+}
+
+.dropdownMenu a:hover{
+  background:rgba(0,0,0,0.06);
+}
+
+.dropdown.open .dropdownMenu{ display:block; }
+
+/* ===== Page ===== */
+h1{
+  font-size:44px;
+  font-weight:300;
+  margin:0 0 10px;
+}
+.sub{
+  margin:0 0 28px;
+  opacity:.78;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:24px;
+}
+.card{
+  background:#fff;
+  padding:22px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  text-decoration:none;
+  color:inherit;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 30px rgba(0,0,0,0.08);
+}
+.card h3{margin:0 0 8px;font-size:18px}
+.card .zh{margin:0;opacity:.78;font-size:14px}
+.badge{
+  display:inline-block;
+  margin-top:14px;
+  border:1px solid rgba(74,42,22,.35);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  color:#4a2a16;
+  background:#fff;
+}
+
+/* ===== Footer contact strip ===== */
+.footer{
+  margin-top:56px;
+  border-top:1px solid rgba(0,0,0,0.08);
+  padding-top:22px;
+  opacity:.85;
+  font-size:14px;
+}
+.footer a{color:#4a2a16}
+
+/* ===== Mobile nav (same as homepage) ===== */
+@media (max-width: 900px){
+  .navToggle{ display:block; }
+
+  .navlinks{
+    position:absolute;
+    left:0; right:0;
+    top:64px;
+    background:#4a2a16;
+    flex-direction:column;
+    padding:16px 24px;
+    display:none;
+  }
+
+  .topnav.open .navlinks{ display:flex; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><a href="index.html#home">Dr. Pin-Han Chen</a></div>
+
+    <button class="navToggle" aria-label="Open menu">☰</button>
+
+    <nav class="navlinks">
+      <a href="index.html#home">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="index.html#selected-photos">Activities</a>
+      <a href="honors.html">Honors</a>
+      <a href="index.html#contact">Contact</a>
+
+      <span class="dropdown">
+        <a href="#">More ▾</a>
+        <ul class="dropdownMenu">
+          <li><a href="links.html">Links</a></li>
+        </ul>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Projects</h1>
+  <p class="sub"></p>
+
+  <div class="cards">
+    <a class="card" href="project-electroplating-pigment.html">
+      <h3>Electroplating Sludge Pigment Development</h3>
+      <p class="zh">電鍍污泥色粉開發</p>
+      <span class="badge">Read more</span>
+    </a>
+
+    <a class="card" href="project-tea-waste-circular.html">
+      <h3>Full Circular Utilization of Tea Waste & Carbon Reduction Strategy</h3>
+      <p class="zh">茶葉渣全循環與減碳策略</p>
+      <span class="badge">Read more</span>
+    </a>
+
+    <a class="card" href="project-aquaculture-decarbon-methodology.html">
+      <h3>Aquaculture Decarbonization Methodology (MRV-oriented)</h3>
+      <p class="zh">水產養殖減碳方法學</p>
+      <span class="badge">Read more</span>
+    </a>
+
+    <a class="card" href="project-solar-ai-recycling.html">
+      <h3>AI-Enabled Solar Panel Smart Recycling</h3>
+      <p class="zh">太陽能板AI智慧回收方法</p>
+      <span class="badge">Read more</span>
+    </a>
+
+    <a class="card" href="project-smart-cup-recycling.html">
+      <h3>Smart Paper Cup Recycling Machine Development</h3>
+      <p class="zh">紙杯智能回收機開發</p>
+      <span class="badge">Read more</span>
+    </a>
+
+    <a class="card" href="project-green-healthcare-diaper-circular.html">
+      <h3>Green Healthcare: Diaper Circularity & Carbon Reduction Benefits</h3>
+      <p class="zh">綠色醫療的尿布循環與減碳效益</p>
+      <span class="badge">Read more</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <div><strong>Contact</strong> / 聯繫：<a href="mailto:hannah530@pu.edu.tw">hannah530@pu.edu.tw</a></div>
+  </div>
+</main>
+
+<script>
+const topnav = document.querySelector('.topnav');
+const toggle = document.querySelector('.navToggle');
+if (toggle){
+  toggle.addEventListener('click',()=>{
+    topnav.classList.toggle('open');
+  });
+}
+const dropdown = document.querySelector('.dropdown');
+if (dropdown){
+  dropdown.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+  });
+  document.addEventListener('click',()=>{
+    dropdown.classList.remove('open');
+  });
+}
+</script>
+
+</body>
+</html>
