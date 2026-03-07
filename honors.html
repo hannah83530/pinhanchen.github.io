@@ -3,63 +3,35 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Honors · Dr. Pin-Han Chen</title>
-<style>
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:"Helvetica Neue",Arial,sans-serif;color:#2b2b2b;background:#f7f5f2;line-height:1.6;}
-.container{max-width:1100px;margin:0 auto;padding:80px 24px;}
-/* nav */
-.topnav{position:sticky;top:0;z-index:999;background:#4a2a16;color:#f4efe9;height:64px;display:flex;align-items:center;}
-.topnav-inner{max-width:1100px;margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;}
-.brand a{color:#f4efe9;text-decoration:none;font-size:18px;letter-spacing:.2px;opacity:.95;font-weight:650;}
-.navToggle{display:none;background:transparent;border:0;color:#f4efe9;font-size:22px;cursor:pointer;}
-.navlinks{display:flex;gap:22px;font-size:14px;align-items:center;}
-.navlinks a{color:#f4efe9;text-decoration:none;opacity:.9;}
-.navlinks a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;}
-.dropdown{position:relative;}
-.dropbtn{display:inline-flex;align-items:center;gap:6px;}
-.dropdownMenu{position:absolute;right:0;top:calc(100% + 10px);min-width:180px;background:#fff;border-radius:12px;padding:8px;list-style:none;margin:0;box-shadow:0 12px 28px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.06);display:none;}
-.dropdownMenu a{display:block;padding:10px;border-radius:10px;color:#2b2b2b;text-decoration:none;font-size:14px;}
-.dropdownMenu a:hover{background:rgba(0,0,0,.06);}
-.dropdown.open .dropdownMenu{display:block;}
-@media (max-width:900px){
-  .navToggle{display:inline-block;}
-  .navlinks{position:absolute;left:0;right:0;top:64px;background:#4a2a16;padding:14px 24px 18px;display:none;flex-direction:column;align-items:flex-start;gap:12px;}
-  .topnav.open .navlinks{display:flex;}
-  .dropdownMenu{position:static;background:transparent;border:0;box-shadow:none;padding:0;display:none;}
-  .dropdown.open .dropdownMenu{display:block;}
-  .dropdownMenu a{color:#f4efe9;padding:8px 0;}
-  .dropdownMenu a:hover{background:transparent;text-decoration:underline;}
-}
-/* page */
-h1{font-size:46px;font-weight:300;margin:0 0 14px;}
-.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 10px 25px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.06);margin-top:18px;}
-.card h2{margin:0 0 10px;font-size:18px;font-weight:650;}
-.small{font-size:14px;opacity:.85;}
-ul{margin:10px 0 0;padding-left:18px;}
-</style>
+<title>Dr. Pin-Han Chen Homepage - Honors & Contributions</title>
+
+<!-- Headings + body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Baskerville (web fallback) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="main.css" />
+
 </head>
 <body>
 
+<!-- NAV -->
 <header class="topnav">
   <div class="topnav-inner">
-    <div class="brand"><a href="index.html#home">Dr. Pin-Han Chen</a></div>
-    <button class="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <nav class="navlinks" aria-label="Main navigation">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#selected-projects">Projects</a>
+    <div class="brand"><a href="index.html">Dr. Pin-Han Chen</a></div>
+    <button class="navToggle">☰</button>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="publications.html">Publications</a>
+      <a href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
-      <a href="index.html#selected-photos">Activities</a>
       <a href="honors.html">Honors</a>
-      <a href="index.html#contact">Contact</a>
-      <span class="dropdown">
-        <a class="dropbtn" href="#" aria-haspopup="true" aria-expanded="false">More ▾</a>
-        <ul class="dropdownMenu" role="menu">
-          <li><a role="menuitem" href="links.html">Links</a></li>
-        </ul>
-      </span>
     </nav>
   </div>
 </header>
@@ -68,30 +40,72 @@ ul{margin:10px 0 0;padding-left:18px;}
   <h1>Honors & Contributions</h1>
 
   <section class="card">
-    <h2>Honors & Invited Talks (Recent 5 Years)</h2>
+    <h2>Patents</h2>
     <ul class="small">
-      <li>2026 the 3rd Circular Economy International Conference (CEIC) — Organizer & Section Host (2026)</li>
-      <li>Talk, NCKU Cross-Dimensional Green Energy Materials Research Center Academic Meeting (2025/04)</li>
-      <li>Talk, College of Circular Economy Research, National Chung Hsing University (2025/10)</li>
-      <li>Invited talk, Department of Biotechnology and Industry Science, NCKU (planned 2026/06)</li>
-      <li>Workshop expert, “Tainan Net-Zero Just Transition Training & Circular Economy/Zero-Waste Industry Guidance” (2024)</li>
-      <li>Program committee member, EARTH 2022 (The 16th International Symposium on East Asian Resources Recycling Technology) (2022)</li>
-      <li>NCKU Scholarship for Outstanding PhD Students (Year 1) (2022)</li>
-      <li>NCKU Scholarship for Outstanding PhD Students (Year 2) (2023)</li>
-      <li>NCKU Environmental Engineering Alumni Scholarship (2014)</li>
+      <li>中華民國專利 (發明)，二次會稿中。水產養殖系統及方法，成大生科團隊、陳品涵</li>
+      <li>中華民國專利 (發明)，專利證書號 I898831。太陽能板回收方法及回收系統，陳品涵、陳偉聖</li>
+      <li>中華民國專利 (新型)，專利證書號 M664787。太陽能板回收系統，陳品涵、陳偉聖</li>
     </ul>
   </section>
-
+  <br><br>
+  <section class="card">
+    <h2>Awards</h2>
+    <ul class="small">
+      <li>國立成功大學培育優秀博士生獎學金 (2022)</li>
+      <li>國立成功大學培育優秀博士生獎學金 (2023)</li>
+    </ul>
+  </section>
+  <br><br>
+  <section class="card">
+    <h2>Contributions</h2>
+    <ul class="small">
+      <li>Organizing Member & Section Host, CEIC國際循環經濟研討會 / The 3rd Circular Economy International Conference (2026)</li>
+      <li>Program Expert, 臺南市「淨零公正轉型-研習培訓及資源循環零廢棄產業輔導計畫」 (2024)</li>
+      <li>Organizing Member, 第16屆東亞資源再生國際研討會 / EARTH (2022)</li>
+    </ul>
+  </section>
+  <br><br>
+  <section class="card">
+    <h2>Invited Talks</h2>
+    <ul class="small">
+      <li>成功大學生科產業系演講 (2026/6, upcoming)</li>
+      <li>中興大學循環經濟研究學院演講 (2025/10)</li>
+      <li>成功大學跨維綠能材料研究中心學術會議演講 (2025/4)</li>
+    </ul>
+  </section>
+  <br><br>
   <section class="card">
     <h2>Talent Development & Service</h2>
     <ul class="small">
-      <li>MOE Youth Development Administration grant: International sustainability & social innovation talent program (Tea-waste decarbonization & carbon-credit oriented exchange) (2026)</li>
-      <li>Class advisor, Providence University Sustainability Program (1A)</li>
-      <li>Advisory committee member, International Foundation Program</li>
-      <li>Library committee member, Sustainability Program</li>
+      <li>主持人, 教育部青年發展署「大專校院國際永續及社會創新人才培育計畫」 (2026)</li>
+      <li>導師, 靜宜大學永續學程 (2025 – Present)</li>
+      <li>顧問委員, 靜宜大學國際專修部 (2025 – Present)</li>
+      <li>委員, 靜宜大學永續學程圖書館 (2025 – Present)</li>
     </ul>
   </section>
 </main>
+
+<section class="contact" id="contact">
+  <div class="container contact-inner">
+    <div>
+      <h3>Contact Information</h3>
+      <p>
+        Sustainable Environment and Smart Technology Program Office, Providence University<br>
+        No. 200, Sec. 7, Taiwan Boulevard, Shalu Dist., Taichung City 433303, Taiwan (R.O.C.)<br><br>
+        
+      </p>
+    </div>
+    <div>
+      <ul>
+      <li><b>Email:</b> <a href="mailto:hannah530@pu.edu.tw" style="color:#f4efe9;">hannah530@pu.edu.tw</a></li>
+      <li><b>ResearchGate:</b> <a href="https://www.researchgate.net/profile/Pin-Han-Chen-2" target="_blank" rel="noopener" style="color:#f4efe9;">Pin-Han Chen</a></li>
+      <li><b>ORCID:</b> <a href="https://orcid.org/0009-0004-1507-6822" target="_blank" rel="noopener" style="color:#f4efe9;">0009-0004-1507-6822</a></li>
+      <li><b>SciProfiles:</b> <span>2590677</span></li>
+      <li><b>LinkedIn:</b> <span>(to be updated)</span></li>
+    </ul>
+    </div>
+  </div>
+</section>
 
 <script>
   const topnav = document.querySelector('.topnav');

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dr. Pin-Han Chen Homepage – Publications</title>
+<title>Dr. Pin-Han Chen Homepage - Research Fields</title>
 
 <!-- Headings + body -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="main.css" />
 
 </head>
+
 <body>
 
 <!-- NAV -->
@@ -37,81 +38,49 @@
 </header>
 
 <main class="container">
+  <h1>Research Fields</h1>
+  <p class="sub-p"></p>
 
-<h1>Publications</h1>
+  <div class="cards-p">
+    <a class="card-p" href="project-electroplating-pigment.html">
+      <h3>Electroplating Sludge Pigment Development</h3>
+      <p class="zh">電鍍污泥色粉開發</p>
+      <span class="badge-p">Read more</span>
+    </a>
 
-<!-- ================= Journal Articles ================= -->
-<div class="section-title">Journal Articles</div>
+    <a class="card-p" href="project-tea-waste-circular.html">
+      <h3>Full Circular Utilization of Tea Waste & Carbon Reduction Strategy</h3>
+      <p class="zh">茶葉渣全循環與減碳策略</p>
+      <span class="badge-p">Read more</span>
+    </a>
 
-<div class="pub">
-  <div class="pub-title">
-    Chen, P.-H., Wu, T.-C., & Chen, W.-H. (2025). 
-    Integrated tri-phase carbon monitoring system for shrimp aquaculture.
-  </div>
-  <div class="pub-meta">
-    Sensors & Materials.
-  </div>
-</div>
+    <a class="card-p" href="project-aquaculture-decarbon-methodology.html">
+      <h3>Aquaculture Decarbonization Methodology (MRV-oriented)</h3>
+      <p class="zh">水產養殖減碳方法學</p>
+      <span class="badge-p">Read more</span>
+    </a>
 
-<div class="pub">
-  <div class="pub-title">
-    Wu, T.-C., & Chen, P.-H. (2025). 
-    Carbon emission monitoring framework in aquaculture systems.
-  </div>
-  <div class="pub-meta">
-    Sensors & Materials.
-  </div>
-</div>
+    <a class="card-p" href="project-solar-ai-recycling.html">
+      <h3>AI-Enabled Solar Panel Smart Recycling</h3>
+      <p class="zh">太陽能板AI智慧回收方法</p>
+      <span class="badge-p">Read more</span>
+    </a>
 
-<div class="pub">
-  <div class="pub-title">
-    Chen, P.-H., et al. (2024). 
-    Circular valorization of waste materials in resource recovery systems.
-  </div>
-  <div class="pub-meta">
-    Journal Article.
-  </div>
-</div>
+    <a class="card-p" href="project-smart-cup-recycling.html">
+      <h3>Smart Paper Cup Recycling Machine Development</h3>
+      <p class="zh">紙杯智能回收機開發</p>
+      <span class="badge-p">Read more</span>
+    </a>
 
-
-<!-- ================= Conference Papers ================= -->
-<div class="section-title">Conference Papers</div>
-
-<div class="pub">
-  <div class="pub-title">
-    Chen, P.-H. (2026). 
-    Circular economy strategies for sustainable material systems.
+    <a class="card-p" href="project-green-healthcare-diaper-circular.html">
+      <h3>Green Healthcare: Diaper Circularity & Carbon Reduction Benefits</h3>
+      <p class="zh">綠色醫療的尿布循環與減碳效益</p>
+      <span class="badge-p">Read more</span>
+    </a>
   </div>
-  <div class="pub-meta">
-    Circular Economy International Conference (CEIC).
-  </div>
-</div>
-
-<div class="pub">
-  <div class="pub-title">
-    Chen, P.-H. (2025). 
-    Net-zero and carbon monitoring integration framework.
-  </div>
-  <div class="pub-meta">
-    Academic Conference Presentation.
-  </div>
-</div>
-
-
-<!-- ================= Online Articles ================= -->
-<div class="section-title">Online Articles & Essays</div>
-
-<div class="pub">
-  <div class="pub-title">
-    Chen, P.-H. (2024). 
-    Circular economy and sustainable transition perspectives.
-  </div>
-  <div class="pub-meta">
-    Online Publication.
-  </div>
-</div>
 
 </main>
+
 
 <section class="contact" id="contact">
   <div class="container contact-inner">
@@ -144,16 +113,13 @@ if (toggle){
   });
 }
 const dropdown = document.querySelector('.dropdown');
-const dropbtn = document.querySelector('.dropbtn');
-if (dropdown && dropbtn){
-  dropbtn.addEventListener('click',(e)=>{
-    e.preventDefault();
+if (dropdown){
+  dropdown.addEventListener('click',(e)=>{
+    e.stopPropagation();
     dropdown.classList.toggle('open');
   });
-  document.addEventListener('click',(e)=>{
-    if(!dropdown.contains(e.target)){
-      dropdown.classList.remove('open');
-    }
+  document.addEventListener('click',()=>{
+    dropdown.classList.remove('open');
   });
 }
 </script>
